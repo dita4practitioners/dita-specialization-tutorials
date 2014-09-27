@@ -1,0 +1,451 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>Topic Specialization Step 1: Design The Topic Element Types</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="schema.DC" href="http://purl.org/dc/terms/">
+      <meta name="DC.Type" content="subsection">
+      
+      <meta name="DC.Title" content="Topic Specialization Step 1: Design The Topic Element Types">
+      
+      <meta name="DC.Relation" scheme="URI" content="topic-specialization-tutorial.html">
+      
+      <meta name="DC.Relation" scheme="URI" content="topic-spec-process-overview.html">
+      
+      <meta name="DC.Relation" scheme="URI" content="topic-specialization-step-2.html">
+      
+      <meta name="DC.Format" content="XHTML">
+      
+      <meta name="DC.Identifier" content="topic-specialization-step-1">
+      <script type="text/javascript">var d4p = {"relativePath":"..\/..\/..\/..\/","dev":false,"debug":false,"draft":false,"nextTopicHref":"body\/part-config-and-extend\/tutorials\/topic-specialization\/topic-specialization-step-2.html","previousTopicHref":"body\/part-config-and-extend\/tutorials\/topic-specialization\/topic-spec-process-overview.html"}</script>
+      <link rel="stylesheet" type="text/css" media="screen, projection" href="../../../../themes/dita-d4p-classic/css/style.css">
+      
+      <link rel="stylesheet" type="text/css" media="screen, projection, print" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      <script type="text/javascript">
+      
+        d4p.cssGridPath = d4p.dev ? 'html5-themes/modules/960-Responsive-Grid/css/' : 'themes/dita-d4p-classic/css/';
+        var ADAPT_CONFIG = {
+          // Where is your CSS?
+          path: d4p.relativePath + d4p.cssGridPath,
+
+          // false = Only run once, when page first loads.
+          // true = Change on window resize and page tilt.
+          dynamic: true,
+
+          // Optional callback... myCallback(i, width)
+          callback: doc_resize,
+
+          // First range entry is the minimum.
+          // Last range entry is the maximum.
+          // Separate ranges by "to" keyword.
+          range: [
+             // small (size-0)
+            '0px    to 760px  = mobile.css',
+             // medium (size-1, size-2)
+            '760px  to 980px  = 720.css',
+            '980px  to 1270px = 960.css',
+             // large (size-3, size-5)
+            '1270px to 1600px = 1200.css',
+            '1600px to 1940px = 1560.css',
+             // extra large (size-6)
+            '1940px to 2540px = 1920.css',
+            '2540px           = 2520.css'
+          ]
+        };
+
+        function doc_resize(i, width)
+        {
+          d4p.setBodyClassfunction(i, width);
+        }
+
+
+        
+      </script>
+      <script type="text/javascript" src="../../../../themes/dita-d4p-classic/js/script.js"></script>
+      </head>
+   <body class="en-us dita-d4p-classic centered navigation-default">
+      <div id="d4h5-main-container" class="container_12" role="application">
+         <ul id="page-links" class="hidden">
+            <li><a id="skip-to-content" href="#d4h5-main-content">Skip to content</a></li>
+            <li><a id="skip-to-localnav" href="#local-navigation">Skip to navigation</a></li>
+            <li><a id="skip-to-footer" href="#footer">Skip to footer</a></li>
+         </ul>
+         <header role="banner" aria-labelledby="publication-title" class="hide-for-small">
+            <div class="grid_8">
+               <h1 id="publication-title">DITA Configuration and Specialization Tutorials</h1>
+            </div>
+            <section class="grid_4 search-box"></section>
+            <secion class="clearfix"></secion>
+         </header>
+         <div id="d4h5-section-container" class="grid_12">
+            <nav class="mobile-nav">
+               <ul>
+                  <li class="toggle-topbar menu-icon no-child "><a href="#local-navigation">Menu</a></li>
+               </ul>
+               <section class="nav-pub-title">DITA Configuration and Specialization Tutorials</section>
+            </nav>
+            <nav id="local-navigation" role="navigation" aria-label="Main navigation" class="grid_4 alpha omega">
+               <div id="nav-content">
+                  <ul>
+                     <li class="toc_link no-child "><a href="../../../../index.html">Table of Contents</a></li>
+                     <li class=" collapsible  active"><a href="../../../../standalone-tutorials/config-and-extend-tutorials-standalone.html">DITA Configuration and Specialization Tutorials</a><ul>
+                           <li class=" no-child "><a href="../../../../standalone-tutorials/about-this-tutorial.html">About These Tutorials</a></li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-end-to-end/dev-environment-setup.html">Setting Up Your Development Environment</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-tool-configuration-and-extension/oxygen/oxygen-setting-up-editing.html">Setting Up OxygenXML for DITA Editing</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/understanding_specialization.html">Understanding Configuration and Specialization</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/vocabulary-management.html">XML Vocabularies and their Management</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/dita-vocabulary-management.html">DITA Vocabulary Management: Modules</a></li>
+                                 <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/doctypes-config-and-specialization.html">DITA Document Types, Configuration, and Specialization</a><ul>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/vocabulary-configuration.html">Configuration</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/specialization-overview.html">Specialization</a></li>
+                                    </ul>
+                                 </li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/cost-of-interchange.html">The Cost of Interchange Enablement and the Overall Value of DITA</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/config-tutorials.html">Introduction to the Configuration and Extension Tutorials</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/general-extension-development-methods.html">General Guidance for Developing New Shells and Modules</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/dtd-or-xsd.html">DTD or XSD?</a></li>
+                                 <li class=" no-child "><a href="../../../../body/sidebars/saxon-and-schema-aware-parsing.html">Schema-Aware Parsing and Saxon</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/packaging-vocabulary-as-plugins.html">Packaging Document Type Shells and Vocabulary Modules as Toolkit Plugins</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/deploying-toolkit-plugins.html">Deploying Toolkit Plugins</a></li>
+                                 <li class=" no-child "><a href="../../../../body/sidebars/public-identifiers.html">Public Identifiers</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/creating-document-type-shells.html">Document Type Shell Tutorial</a><ul>
+                                 <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/creating-a-dtd-shell.html">DTD Topic Type Shell Creation Tutorial</a><ul>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/dtd-topic-shell-step-01.html">DTD Topic Type Shell Tutorial Step 1: Copy Existing Shell</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/dtd-topic-shell-step-02.html">DTD Topic Type Shell Tutorial Step 2: Delete Unwanted Domain Modules</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/dtd-topic-shell-step-03.html">DTD Topic Type Shell Tutorial Step 3: Add Reference to a New Domain</a></li>
+                                    </ul>
+                                 </li>
+                                 <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/creating-an-xsd-shell.html">XSD Topic Type Shell Tutorial</a><ul>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/xsd-topic-shell-step-01.html">XSD Topic Type Shell Tutorial Step 1: Copy Existing Shell</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/xsd-topic-shell-step-02.html">XSD Topic Type Shell Tutorial Step 2: Remove References to Unwanted Domain Modules</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/xsd-topic-shell-step-03.html">XSD Topic Type Shell Tutorial Step 3: Add Reference to a New Domain</a></li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/constraint-module/creating-constraint-module.html">Topic Constraint Module Tutorial</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/constraint-module/constraint-domain-dtd-step-1.html">Topic Constraint Module Step 1: Create The Constraint Module File</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/constraint-module/constraint-domain-dtd-step-2.html">Topic Constraint Module Step 2: Declare The domains Attribute Text Entity</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/constraint-module/constraint-domain-dtd-step-3.html">Topic Constraint Module Step 3: Define the New Content Models</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/constraint-module/constraint-domain-dtd-step-4.html">Topic Constraint Module Step 4: Integrate the Constraint Module in a Document Type
+                                       Shell</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/constraint-module/constraint-domain-dtd-step-5.html">Topic Constraint Module Step 5: Test the Document Type Shell</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/constraint-module/creating-an-xsd-constraint-module.html">Topic Constraint Module: XSD-Syntax Version</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/attribute-domain/domain-att-spec-process.html">Attribute Specialization Tutorial</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/attribute-domain/domain-att-spec-process-step-1.html">Attribute Specialization Step 1: Create Domain Module Files</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/attribute-domain/domain-att-spec-process-step-2.html">Attribute Specialization Step 2: Integrate With Document Type Shell</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/attribute-domain/domain-att-spec-process-step-3.html">Attribute Specialization Step 3: Test the Declarations</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/attribute-domain/xsd-attribute-specialization.html">Attribute Specialization: XSD Version</a></li>
+                              </ul>
+                           </li>
+                           <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-overview.html">Element Domain Specialization Process Overview (DTDs)</a></li>
+                           <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-1.html">Element Domain Specialization Step 1: Design The Domain Element Types</a></li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-2.html">Element Domain Specialization Step 2: Declare The Domain Element Types</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-2-1.html">Step 2-1. Create New .mod File</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-2-2.html">Step 2-2. Declare Element Type Name Parameter Entities</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-2-3.html">Step 2-3. Declare Elements and Attributes</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-2-4.html">Step 2-4. Declare class Attributes</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-3.html">Element Domain Specialization Step 3: Declare The Module Entities File</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-3-1.html">Step 3-1. Create xmlDomain.ent</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-3-2.html">Step 3-2. Declare Type-Specific Integration Entities</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-3-3.html">Step 3-3. Declare Domain Usage Text Entity</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4.html">Element Domain Specialization Step 4: Integrate The Module Into a Document Type Shell</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-1.html">Step 4-1. Setup Local Copy of Document Type Shell DTD</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-2.html">Step 4-2. Create a Test Topic</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-3.html">Step 4-3. Add .ent File to Shell</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-4.html">Step 4-4. Update Type-Specific Parameter Entities in Shell DTD</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-5.html">Step 4-5. Update domains attribute with new domain</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-6.html">Step 4-6. Include .mod Declaration Set</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-7.html">Step 4-7. Test the integration</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-5.html">Element Domain Specialization Step 5: Extend DITA Open Toolkit XHTML Processor</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-5-1.html">Element Domain Specialization Step 5-1: Create Blank Specialization-Specific XSLT
+                                       Transform Plugin</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-5-2.html">Element Domain Specialization Step 5-2: Implement Type-Specific XSLT Templates</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-5-3.html">Element Domain Specialization Step 5-3: Test The Stylesheet</a></li>
+                              </ul>
+                           </li>
+                           <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-xsd.html">Element Domain Specialization: XSD Version</a></li>
+                           <li class=" collapsible  active"><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-tutorial.html">Topic Specialization Tutorial</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-spec-process-overview.html">Topic Specialization Process Overview</a></li>
+                                 <li class=" no-child  active"><a class="selected" href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-1.html">Topic Specialization Step 1: Design The Topic Element Types</a></li>
+                                 <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2.html">Topic Specialization Step 2: Declare the Topic Module Element Types</a><ul>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-1.html">Step 2-1. Create Test Case Document Instance</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-2.html">Step 2-2. Create New Document Type Shell DTD</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-3.html">Step 2-3. Create New .mod File and Integrate Into Shell</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-4.html">Step 2-4. Declare FAQ Question Topic Type Elements and Attributes</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-5.html">Step 2-5. Declare Element Type Parameter Entities</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-6.html">Step 2-6. Declare FAQ Question class Attributes</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-7.html">Step 2.7: Define domains Attribute Contribution Entity (.ent File)</a></li>
+                                    </ul>
+                                 </li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-3.html">Topic Specialization Step 3. Package the Modules as a Toolkit Plugin</a></li>
+                                 <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4.html">Topic Specialization Step 4: Extending the Toolkit To Support the Specialization</a><ul>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-1.html">Topic Specialization Step 4-1: Create Initial Toolkit Plugin Components</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-2.html">Topic Specialization Step 4-2: Create Templates For Specialized Elements</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-3.html">Topic Specialization Step 4-3: Copy Template Contents from Base XSLTs</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-4.html">Topic Specialization Step 4-4: Implement Specialization-Specific XSLT Processing</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-5.html">Topic Specialization Step 4-5: Refine Markup Design for FAQ Question</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-4cont.html">Topic Specialization Step 4-4 (continued): Implement Specialization-Specific XSLT
+                                             Processing</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-6.html">Topic Specialization Step 4-6: Implement CSS Styles</a></li>
+                                    </ul>
+                                 </li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-xsd.html">Topic Specialization: XSD Version</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-tutorial.html">Map Specialization Tutorial</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-step-1.html">Map Specialization Step 1: Design the Map Element Types</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-step-2.html">Map Specialization Step 2: Create New Document Type Shell DTD</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-step-3.html">Map Specialization Step 3: Create faq-map Map Type Module</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-step-4.html">Map Specialization Step 4: Create faq-mapDomain Module</a></li>
+                                 <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-xsd.html">Map Specialization: XSD Version</a><ul>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-xsd-step-1.html">Map Specialization XSD Step 1: Define faq-map Map Type</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-xsd-step-2.html">Map Specialization XSD Step 2: Define faq-mapDomain Map Domain</a></li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class=" no-child "><a href="../../../../generated-index.html">Index</a></li>
+                  </ul>
+               </div>
+            </nav>
+            <div id="d4h5-main-content" class="grid_8 alpha omega">
+               <section>
+                  <div id="content-toolbar" class="toolbar hide-for-small">
+                     
+                     <div xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" class="familylinks">
+                        
+                        <div class="parentlink"><a href="topic-specialization-tutorial.html" title="Topic Specialization Tutorial"><span class="fi fi-arrow-up"></span><span class="screen-reader">Topic Specialization Tutorial</span></a></div>
+                        
+                        <div class="previouslink"><a href="topic-spec-process-overview.html" title="Topic Specialization Process Overview"><span class="fi fi-arrow-left"></span><span class="screen-reader">Topic Specialization Process Overview</span></a></div>
+                        
+                        <div class="nextlink"><a href="topic-specialization-step-2.html" title="Topic Specialization Step 2: Declare the Topic Module Element Types"><span class="fi fi-arrow-right"></span><span class="screen-reader">Topic Specialization Step 2: Declare the Topic Module Element Types</span></a></div>
+                        
+                     </div>
+                     
+                  </div>
+                  <div class="page subsection  - topic-topic subsection-subsection " id="topic-specialization-step-1">
+                     
+                     <h1 class="title topictitle1">Topic Specialization Step 1: Design The Topic Element Types</h1>
+                     <div class="body">
+                        <div class="p">For topic specialization you have to think about several things in designing your
+                           specialization: 
+                           <ul class="ul">
+                              <li class="li">What should the new topic element type name be?</li>
+                              
+                              <li class="li">What should be allowed within the topic body?</li>
+                              
+                              <li class="li">Should the topic allow any nested topics?</li>
+                              
+                              <li class="li">Does the topic require specialized topic-level metadata?</li>
+                              
+                           </ul>
+                           
+                        </div>
+                        
+                        <p class="p">Of course, to answer these questions, you have to first understand the requirements,
+                           both for
+                           the information content and the information presentation and processing.
+                        </p>
+                        
+                        <p class="p">For this tutorial, our task is to create a specialization of <code>&lt;concept&gt;</code>
+                           that supports the requirements of FAQ information, that is, questions and answers.
+                        </p>
+                        
+                        <aside class="note "><span class="title">Note:</span> If you just want to know what the mechanics are and don't really care about how
+                           we arrived at the design used in the rest of the tutorial, you can skip on to step
+                           2 at this point. But once you've worked through the tutorial I'd urge you to come
+                           back
+                           here and read this step all the way through.
+                        </aside>
+                        
+                        <p class="p">I chose FAQs as the subject of the tutorial because they are familiar to most Web
+                           users (and
+                           now even non-Web users), they are relatively simple (at least on their face) but not
+                           so
+                           trivial as to be boring, and they have some potential sophistications that could make
+                           for interesting exploration beyond the immediate task of <span class="q">"what are the mechanics of
+                              defining and implementing a new topic type?"</span> In addition, there are any number of
+                           useful and reasonable ways that FAQs could be constructed using DITA; this tutorial
+                           presents only one, and not necessarily the best one.
+                        </p>
+                        
+                        <p class="p">For this tutorial I have decided that the each question should be a separate topic,
+                           rather
+                           than having one topic that contains multiple question/answer pairs. I have found that
+                           making <code>&lt;topic&gt;</code> the primary unit of organization and granularity works
+                           well, even if it leads to topics that some people might initially or intuitively think
+                           are too small. But I wouldn't go to the mat to defend this design decision, and I
+                           don't
+                           claim it's necessarily the best. It has a logic I can defend, but that's as far as
+                           I'll
+                           go.
+                        </p>
+                        
+                        <p class="p">As you work through the tutorial, take the time to ask yourself how you would have
+                           done it
+                           and why a different way would or wouldn't be better for some reason. This type of
+                           analytical thought is all part of understanding your requirements and mapping them
+                           to
+                           implementations to create the best possible solution.
+                        </p>
+                        
+                        <p class="p">For this tutorial, let's define an FAQ as a set of one or more question and answer
+                           pairs,
+                           where the question is a relatively short statement and the answer may be as short
+                           or
+                           long as needed. We would like the markup to reflect this essential nature, that is,
+                           there should be something named something like <span class="q">"question"</span> and something named
+                           something like <span class="q">"answer."</span> There are no particular requirements for the contents of
+                           answers themselves. We would like the rendering to clearly identify the question and
+                           answer, for example, <span class="q">"Q. Question statement,"</span><span class="q">"A. Answer response."</span> The default topic presentation would <em class="ph i">not</em> be sufficient
+                           in this case.
+                        </p>
+                        
+                        <p class="p">Note that these requirements are pretty simple. In any sort of engineering activity,
+                           it is
+                           best to start off as simply as you can and use iterative refinement to satisfy new
+                           requirements as you discover them. In the world of agile methods this is known as
+                           <span class="q">"the
+                              simplest thing that could possibly work."</span></p>
+                        
+                        <p class="p">This approach does several things: it lets you get something working quickly, it gives
+                           you
+                           immediate practical experience that will feed back into the design and implementation,
+                           and it avoids designing and implementing things you don't need. When designing XML
+                           markup it is quite easy to over-design and build complex markup structures that nobody
+                           actually wants, needs, or perhaps, can understand how to use. I've certainly done
+                           my
+                           share of this in the past.
+                        </p>
+                        
+                        <p class="p">I now find it much more effective to start small and build up as needed. Often this
+                           refinement process happens over the course of a few hours as I implement a new document
+                           type or specialization and start testing it with real data, but sometimes it happens
+                           over weeks or months as the new markup design is tested by its target users. In any
+                           case, for this tutorial, we will start small and, once we have something working that
+                           minimally meets our requirements, we can start thinking about other things we might
+                           need.
+                        </p>
+                        
+                        <p class="p">Another characteristic of agile development methods is <span class="q">"test-driven development,"</span> that
+                           is, using test cases to drive the implementation, rather than implementing first and
+                           testing later. The basic idea is that you write the test case first, which will of
+                           course initially fail (because there's no code yet), and then you do the implementation
+                           until the test case passes, at which point you know you're done. The test cases reflect
+                           the requirements as you understand them, and if the requirements change, you update
+                           the
+                           test case to reflect your new understanding.
+                        </p>
+                        
+                        <p class="p">For markup design, this means you first create document instances and then implement
+                           the DTD
+                           or schema that will validate those instances. When the instances are valid, you know
+                           you're done (as long as your instances reflect all the important cases the schema
+                           needs
+                           to support). This is in contrast to simply going from requirements straight to markup
+                           declarations, and then only creating instances after the fact, which is the way we
+                           had
+                           to do it back in SGML days. One of the nice things about XML is that you can have
+                           documents with no document type, so you can start with instances and add DTDs or schemas
+                           later. 
+                        </p>
+                        
+                        <div class="p">Names are always important and in this case there is a slight problem with the name
+                           to use
+                           for the topic element itself, namely <span class="q">"faq,"</span> which would be the obvious choice. The
+                           problem is that the term "FAQ" can be read as either singular or plural (a set of
+                           questions) but here we want a single topic to reflect a single question/answer pair.
+                           The
+                           name <span class="q">"question-and-answer"</span> might work, except that could also imply a testing
+                           environment rather than an FAQ environment. Thus, I have arrived at the name
+                           <span class="q">"faq-question"</span>—it's technically redundant but fairly clear and not too
+                           long: <pre class="pre codeblock">
+&lt;faq-question id="q1"&gt;
+&lt;/faq-question&gt;</pre>
+                           </div>
+                        
+                        <div class="p">The topic title will be the question statement, and it's probably useful to specialize
+                           <code>&lt;title&gt;</code> to <code>&lt;faq-question-statement&gt;</code> to make that
+                           clear:
+                           <pre class="pre codeblock">
+&lt;faq-question id="q1"&gt;
+  &lt;faq-question-statement&gt;Can I add attributes to specific element types?&lt;/faq-question-statement&gt;
+&lt;/faq-question&gt; </pre>
+                           </div>
+                        
+                        <p class="p">In this case we don't have any particular requirements for the topic body content,
+                           so we
+                           could leave <code>&lt;body&gt;</code> unspecialized, but since the body will be the FAQ
+                           answer, it makes sense to rename <code>&lt;body&gt;</code> to
+                           <code>&lt;faq-answer&gt;</code>. 
+                        </p>
+                        
+                        <p class="p">Note that just <span class="q">"answer"</span> is probably too generic. One challenge with DITA 1.x is that
+                           because you cannot use namespaces, all element types, including all specialized element
+                           types, must be unique. While you can't guarantee that your specialized types won't
+                           conflict with somebody else's, it helps if you use names that are specific to your
+                           content. This can sometimes lead to names that are longer or more cumbersome than
+                           they
+                           would need to be if we could use namespaces in DITA 1.x. A good example is the element
+                           types defined by the DITA 1.2 Learning and Training vocabulary modules, which all
+                           start
+                           with <span class="q">"lc"</span> (for <span class="q">"learning content"</span>), which functions as a sort of <span class="q">"namespace
+                              prefix"</span> and helps ensure that no other vocabularies will have names that collide
+                           with the Learning and Training types.
+                        </p>
+                        
+                        <div class="p">So our topic body should look like this: <pre class="pre codeblock">
+&lt;faq-question id="question-id"&gt;
+  &lt;faq-question-statement&gt;Can I add attributes to specific element types?&lt;/faq-question-statement&gt;
+  &lt;faq-answer &gt;
+    &lt;p&gt;No, you can only define global attributes, specialized either from &amp;lt;base&amp;gt;
+    or @props.&lt;/p&gt;
+  &lt;/faq-answer&gt;
+&lt;/faq-question&gt;</pre>
+                           </div>
+                        
+                        <p class="p">This design should be sufficient to get us going. Note that we are deferring all issues
+                           of how to organize the FAQ questions into FAQs using maps, where we know we already
+                           have everything we need to create sets of questions and to do things like group questions
+                           into titled groups.
+                        </p>
+                        
+                     </div>
+                     
+                     <div xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" class="related-links"></div>
+                  </div>
+                  
+               </section>
+               <div class="clear"></div>
+               
+            </div>
+            <div class="clearfix"></div>
+         </div>
+         <div class="clearfix"></div>
+         <div id="footer-container" class="grid_12">
+            
+            
+         </div>
+      </div>
+   </body>
+</html>

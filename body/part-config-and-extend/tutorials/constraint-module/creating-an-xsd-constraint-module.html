@@ -1,0 +1,451 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>Topic Constraint Module: XSD-Syntax Version</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="schema.DC" href="http://purl.org/dc/terms/">
+      <meta name="DC.Type" content="subsection">
+      
+      <meta name="DC.Title" content="Topic Constraint Module: XSD-Syntax Version">
+      
+      <meta name="DC.subject" content="constraint module, XSD syntax, content models, constraining">
+      
+      <meta name="keywords" content="constraint module, XSD syntax, content models, constraining">
+      
+      <meta name="DC.Relation" scheme="URI" content="creating-constraint-module.html">
+      
+      <meta name="DC.Relation" scheme="URI" content="constraint-domain-dtd-step-5.html">
+      
+      <meta name="DC.Format" content="XHTML">
+      
+      <meta name="DC.Identifier" content="topic-id">
+      <script type="text/javascript">var d4p = {"relativePath":"..\/..\/..\/..\/","dev":false,"debug":false,"draft":false,"nextTopicHref":"body\/part-config-and-extend\/tutorials\/attribute-domain\/domain-att-spec-process.html","previousTopicHref":"body\/part-config-and-extend\/tutorials\/constraint-module\/constraint-domain-dtd-step-5.html"}</script>
+      <link rel="stylesheet" type="text/css" media="screen, projection" href="../../../../themes/dita-d4p-classic/css/style.css">
+      
+      <link rel="stylesheet" type="text/css" media="screen, projection, print" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      <script type="text/javascript">
+      
+        d4p.cssGridPath = d4p.dev ? 'html5-themes/modules/960-Responsive-Grid/css/' : 'themes/dita-d4p-classic/css/';
+        var ADAPT_CONFIG = {
+          // Where is your CSS?
+          path: d4p.relativePath + d4p.cssGridPath,
+
+          // false = Only run once, when page first loads.
+          // true = Change on window resize and page tilt.
+          dynamic: true,
+
+          // Optional callback... myCallback(i, width)
+          callback: doc_resize,
+
+          // First range entry is the minimum.
+          // Last range entry is the maximum.
+          // Separate ranges by "to" keyword.
+          range: [
+             // small (size-0)
+            '0px    to 760px  = mobile.css',
+             // medium (size-1, size-2)
+            '760px  to 980px  = 720.css',
+            '980px  to 1270px = 960.css',
+             // large (size-3, size-5)
+            '1270px to 1600px = 1200.css',
+            '1600px to 1940px = 1560.css',
+             // extra large (size-6)
+            '1940px to 2540px = 1920.css',
+            '2540px           = 2520.css'
+          ]
+        };
+
+        function doc_resize(i, width)
+        {
+          d4p.setBodyClassfunction(i, width);
+        }
+
+
+        
+      </script>
+      <script type="text/javascript" src="../../../../themes/dita-d4p-classic/js/script.js"></script>
+      </head>
+   <body class="en-us dita-d4p-classic centered navigation-default">
+      <div id="d4h5-main-container" class="container_12" role="application">
+         <ul id="page-links" class="hidden">
+            <li><a id="skip-to-content" href="#d4h5-main-content">Skip to content</a></li>
+            <li><a id="skip-to-localnav" href="#local-navigation">Skip to navigation</a></li>
+            <li><a id="skip-to-footer" href="#footer">Skip to footer</a></li>
+         </ul>
+         <header role="banner" aria-labelledby="publication-title" class="hide-for-small">
+            <div class="grid_8">
+               <h1 id="publication-title">DITA Configuration and Specialization Tutorials</h1>
+            </div>
+            <section class="grid_4 search-box"></section>
+            <secion class="clearfix"></secion>
+         </header>
+         <div id="d4h5-section-container" class="grid_12">
+            <nav class="mobile-nav">
+               <ul>
+                  <li class="toggle-topbar menu-icon no-child "><a href="#local-navigation">Menu</a></li>
+               </ul>
+               <section class="nav-pub-title">DITA Configuration and Specialization Tutorials</section>
+            </nav>
+            <nav id="local-navigation" role="navigation" aria-label="Main navigation" class="grid_4 alpha omega">
+               <div id="nav-content">
+                  <ul>
+                     <li class="toc_link no-child "><a href="../../../../index.html">Table of Contents</a></li>
+                     <li class=" collapsible  active"><a href="../../../../standalone-tutorials/config-and-extend-tutorials-standalone.html">DITA Configuration and Specialization Tutorials</a><ul>
+                           <li class=" no-child "><a href="../../../../standalone-tutorials/about-this-tutorial.html">About These Tutorials</a></li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-end-to-end/dev-environment-setup.html">Setting Up Your Development Environment</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-tool-configuration-and-extension/oxygen/oxygen-setting-up-editing.html">Setting Up OxygenXML for DITA Editing</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/understanding_specialization.html">Understanding Configuration and Specialization</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/vocabulary-management.html">XML Vocabularies and their Management</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/dita-vocabulary-management.html">DITA Vocabulary Management: Modules</a></li>
+                                 <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/doctypes-config-and-specialization.html">DITA Document Types, Configuration, and Specialization</a><ul>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/vocabulary-configuration.html">Configuration</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/specialization-overview.html">Specialization</a></li>
+                                    </ul>
+                                 </li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/cost-of-interchange.html">The Cost of Interchange Enablement and the Overall Value of DITA</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/config-tutorials.html">Introduction to the Configuration and Extension Tutorials</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/general-extension-development-methods.html">General Guidance for Developing New Shells and Modules</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/dtd-or-xsd.html">DTD or XSD?</a></li>
+                                 <li class=" no-child "><a href="../../../../body/sidebars/saxon-and-schema-aware-parsing.html">Schema-Aware Parsing and Saxon</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/packaging-vocabulary-as-plugins.html">Packaging Document Type Shells and Vocabulary Modules as Toolkit Plugins</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/deploying-toolkit-plugins.html">Deploying Toolkit Plugins</a></li>
+                                 <li class=" no-child "><a href="../../../../body/sidebars/public-identifiers.html">Public Identifiers</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/creating-document-type-shells.html">Document Type Shell Tutorial</a><ul>
+                                 <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/creating-a-dtd-shell.html">DTD Topic Type Shell Creation Tutorial</a><ul>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/dtd-topic-shell-step-01.html">DTD Topic Type Shell Tutorial Step 1: Copy Existing Shell</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/dtd-topic-shell-step-02.html">DTD Topic Type Shell Tutorial Step 2: Delete Unwanted Domain Modules</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/dtd-topic-shell-step-03.html">DTD Topic Type Shell Tutorial Step 3: Add Reference to a New Domain</a></li>
+                                    </ul>
+                                 </li>
+                                 <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/creating-an-xsd-shell.html">XSD Topic Type Shell Tutorial</a><ul>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/xsd-topic-shell-step-01.html">XSD Topic Type Shell Tutorial Step 1: Copy Existing Shell</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/xsd-topic-shell-step-02.html">XSD Topic Type Shell Tutorial Step 2: Remove References to Unwanted Domain Modules</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/document-type-shells/xsd-topic-shell-step-03.html">XSD Topic Type Shell Tutorial Step 3: Add Reference to a New Domain</a></li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  active"><a href="../../../../body/part-config-and-extend/tutorials/constraint-module/creating-constraint-module.html">Topic Constraint Module Tutorial</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/constraint-module/constraint-domain-dtd-step-1.html">Topic Constraint Module Step 1: Create The Constraint Module File</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/constraint-module/constraint-domain-dtd-step-2.html">Topic Constraint Module Step 2: Declare The domains Attribute Text Entity</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/constraint-module/constraint-domain-dtd-step-3.html">Topic Constraint Module Step 3: Define the New Content Models</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/constraint-module/constraint-domain-dtd-step-4.html">Topic Constraint Module Step 4: Integrate the Constraint Module in a Document Type
+                                       Shell</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/constraint-module/constraint-domain-dtd-step-5.html">Topic Constraint Module Step 5: Test the Document Type Shell</a></li>
+                                 <li class=" no-child  active"><a class="selected" href="../../../../body/part-config-and-extend/tutorials/constraint-module/creating-an-xsd-constraint-module.html">Topic Constraint Module: XSD-Syntax Version</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/attribute-domain/domain-att-spec-process.html">Attribute Specialization Tutorial</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/attribute-domain/domain-att-spec-process-step-1.html">Attribute Specialization Step 1: Create Domain Module Files</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/attribute-domain/domain-att-spec-process-step-2.html">Attribute Specialization Step 2: Integrate With Document Type Shell</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/attribute-domain/domain-att-spec-process-step-3.html">Attribute Specialization Step 3: Test the Declarations</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/attribute-domain/xsd-attribute-specialization.html">Attribute Specialization: XSD Version</a></li>
+                              </ul>
+                           </li>
+                           <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-overview.html">Element Domain Specialization Process Overview (DTDs)</a></li>
+                           <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-1.html">Element Domain Specialization Step 1: Design The Domain Element Types</a></li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-2.html">Element Domain Specialization Step 2: Declare The Domain Element Types</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-2-1.html">Step 2-1. Create New .mod File</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-2-2.html">Step 2-2. Declare Element Type Name Parameter Entities</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-2-3.html">Step 2-3. Declare Elements and Attributes</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-2-4.html">Step 2-4. Declare class Attributes</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-3.html">Element Domain Specialization Step 3: Declare The Module Entities File</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-3-1.html">Step 3-1. Create xmlDomain.ent</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-3-2.html">Step 3-2. Declare Type-Specific Integration Entities</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-3-3.html">Step 3-3. Declare Domain Usage Text Entity</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4.html">Element Domain Specialization Step 4: Integrate The Module Into a Document Type Shell</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-1.html">Step 4-1. Setup Local Copy of Document Type Shell DTD</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-2.html">Step 4-2. Create a Test Topic</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-3.html">Step 4-3. Add .ent File to Shell</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-4.html">Step 4-4. Update Type-Specific Parameter Entities in Shell DTD</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-5.html">Step 4-5. Update domains attribute with new domain</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-6.html">Step 4-6. Include .mod Declaration Set</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-7.html">Step 4-7. Test the integration</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-5.html">Element Domain Specialization Step 5: Extend DITA Open Toolkit XHTML Processor</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-5-1.html">Element Domain Specialization Step 5-1: Create Blank Specialization-Specific XSLT
+                                       Transform Plugin</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-5-2.html">Element Domain Specialization Step 5-2: Implement Type-Specific XSLT Templates</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-5-3.html">Element Domain Specialization Step 5-3: Test The Stylesheet</a></li>
+                              </ul>
+                           </li>
+                           <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/element-domain/domain-spec-xsd.html">Element Domain Specialization: XSD Version</a></li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-tutorial.html">Topic Specialization Tutorial</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-spec-process-overview.html">Topic Specialization Process Overview</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-1.html">Topic Specialization Step 1: Design The Topic Element Types</a></li>
+                                 <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2.html">Topic Specialization Step 2: Declare the Topic Module Element Types</a><ul>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-1.html">Step 2-1. Create Test Case Document Instance</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-2.html">Step 2-2. Create New Document Type Shell DTD</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-3.html">Step 2-3. Create New .mod File and Integrate Into Shell</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-4.html">Step 2-4. Declare FAQ Question Topic Type Elements and Attributes</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-5.html">Step 2-5. Declare Element Type Parameter Entities</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-6.html">Step 2-6. Declare FAQ Question class Attributes</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-7.html">Step 2.7: Define domains Attribute Contribution Entity (.ent File)</a></li>
+                                    </ul>
+                                 </li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-3.html">Topic Specialization Step 3. Package the Modules as a Toolkit Plugin</a></li>
+                                 <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4.html">Topic Specialization Step 4: Extending the Toolkit To Support the Specialization</a><ul>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-1.html">Topic Specialization Step 4-1: Create Initial Toolkit Plugin Components</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-2.html">Topic Specialization Step 4-2: Create Templates For Specialized Elements</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-3.html">Topic Specialization Step 4-3: Copy Template Contents from Base XSLTs</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-4.html">Topic Specialization Step 4-4: Implement Specialization-Specific XSLT Processing</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-5.html">Topic Specialization Step 4-5: Refine Markup Design for FAQ Question</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-4cont.html">Topic Specialization Step 4-4 (continued): Implement Specialization-Specific XSLT
+                                             Processing</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-6.html">Topic Specialization Step 4-6: Implement CSS Styles</a></li>
+                                    </ul>
+                                 </li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-xsd.html">Topic Specialization: XSD Version</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-tutorial.html">Map Specialization Tutorial</a><ul>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-step-1.html">Map Specialization Step 1: Design the Map Element Types</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-step-2.html">Map Specialization Step 2: Create New Document Type Shell DTD</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-step-3.html">Map Specialization Step 3: Create faq-map Map Type Module</a></li>
+                                 <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-step-4.html">Map Specialization Step 4: Create faq-mapDomain Module</a></li>
+                                 <li class=" collapsible  collapsed"><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-xsd.html">Map Specialization: XSD Version</a><ul>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-xsd-step-1.html">Map Specialization XSD Step 1: Define faq-map Map Type</a></li>
+                                       <li class=" no-child "><a href="../../../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-xsd-step-2.html">Map Specialization XSD Step 2: Define faq-mapDomain Map Domain</a></li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class=" no-child "><a href="../../../../generated-index.html">Index</a></li>
+                  </ul>
+               </div>
+            </nav>
+            <div id="d4h5-main-content" class="grid_8 alpha omega">
+               <section>
+                  <div id="content-toolbar" class="toolbar hide-for-small">
+                     
+                     <div xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" class="familylinks">
+                        
+                        <div class="parentlink"><a href="creating-constraint-module.html" title="Topic Constraint Module Tutorial"><span class="fi fi-arrow-up"></span><span class="screen-reader">Topic Constraint Module Tutorial</span></a></div>
+                        
+                        <div class="previouslink"><a href="constraint-domain-dtd-step-5.html" title="Topic Constraint Module Step 5: Test the Document Type Shell"><span class="fi fi-arrow-left"></span><span class="screen-reader">Topic Constraint Module Step 5: Test the Document Type Shell</span></a></div>
+                        
+                     </div>
+                     
+                  </div>
+                  <div class="page subsection  - topic-topic subsection-subsection " id="topic-id">
+                     
+                     <h1 class="title topictitle1">Topic Constraint Module: XSD-Syntax Version</h1>
+                     <div class="body">
+                        <p class="p">XSD constraint modules consist of one or two XSD documents that redefine the content
+                           model or
+                           attribute list to be constrained. Whether the constraint requires one document or
+                           two
+                           depends on the details of the constraint being applied and the group being constrained.
+                           This particular constraint requires an intermediate XSD file to work around limitations
+                           in the way the redefine feature works. Essentially, we have to clear the content of
+                           <code>&lt;p&gt;</code> and then extend it, which requires two levels of redefinition. 
+                        </p>
+                        
+                        <div class="p">To create an XSD version of the highlight-only topic constraint module, follow these
+                           steps:
+                           <ol class="ol" id="topic-id__ol_8ddc0387-5381-4182-9725-f902e72e5dbf">
+                              <li class="li">Create a new directory to hold the constraint module and an XSD document type shell
+                                 that
+                                 uses it. This directory will eventually be the directory for the constraint
+                                 module, so name it in a way that reflects the name of the constraint module, for
+                                 example, <span class="q">"highlightOnlyPConstraints."</span></li>
+                              
+                              <li class="li">Copy <span class="ph filepath">topic.xsd</span> from the <span class="ph filepath">technicalContent</span>
+                                 directory of the OASIS-provided DITA XSD distribution to this new directory.
+                                 Name it something like <span class="ph filepath">topic-with-highlight-constraint.xsd</span>
+                                 to make it clear what this shell is for.
+                                 <p class="p">Eventually you will move this shell
+                                    schema to a different directory, but for now putting all the pieces in one
+                                    directory makes setup and testing easier. Once everything is working in this
+                                    location you can reorganize the files and know when you've got everything
+                                    hooked up right again.
+                                 </p>
+                                 
+                              </li>
+                              
+                              <li class="li">In the same directory, create a new XML document that uses the shell XSD. This document
+                                 is
+                                 used to test as you go. Name it something like
+                                 <span class="ph filepath">constraint-test.xsd</span>. Verify that the document is valid.
+                                 As you haven't yet modified the shell schema document, it should be valid. The
+                                 document should look something like
+                                 this:<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;topic
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="topic-with-highlight-constraint.xsd"
+  id="topicid"&gt;
+  &lt;title&gt;Test of Simple Paragraph Restriction&lt;/title&gt;
+  &lt;body&gt;
+    &lt;p&gt;&lt;b&gt;b&lt;/b&gt;, &lt;i&gt;i&lt;/i&gt;, &lt;u&gt;u&lt;/u&gt;. Not allowed &lt;keyword&gt;keyword&lt;/keyword&gt;.&lt;/p&gt;
+    &lt;p&gt;&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/topic&gt;</pre>
+                                 </li>
+                              
+                              <li class="li">In the same directory, create a new empty XSD document named
+                                 <span class="ph filepath">highlightOnlyPConstraints.xsd</span>. This is the constraint
+                                 module file.
+                              </li>
+                              
+                              <li class="li">For this domain you are constraining the content model of the <code>&lt;p&gt;</code>
+                                 element, so the first task is to find where <code>&lt;p&gt;</code>'s content model
+                                 is defined in the XSD files that make up the base <code>&lt;topic&gt;</code>
+                                 vocabulary module. One way to do this is to search for
+                                 <samp class="ph codeph">name="p.content"</samp> across all the standard XSD modules (for
+                                 example, using OxygenXML's <span class="q">"Find in files"</span> feature or using Search in
+                                 Windows Explorer). You should find the group definition for <span class="q">"p.content"</span> in
+                                 <span class="ph filepath">commonElementMod.xsd</span>. It looks like
+                                 this:<pre class="pre codeblock">	&lt;xs:group name="p.content"&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:choice minOccurs="0" maxOccurs="unbounded"&gt;
+				&lt;xs:group ref="para.cnt" minOccurs="0"/&gt;
+			&lt;/xs:choice&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:group&gt;</pre>
+                                 </li>
+                              
+                              <li class="li">Create the intermediate redefinition file <span class="ph filepath">highlightOnlyPConstraintsInt.xsd</span> and give it this content:<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  
+  &lt;xs:annotation&gt;
+    &lt;xs:documentation&gt;Intermediate level of redefine to work around XSD redefine limitations
+    &lt;/xs:documentation&gt;
+  &lt;/xs:annotation&gt;
+  
+  &lt;xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:commonElementMod.xsd:1.2"&gt;
+    &lt;!-- constrain content of &lt;p&gt; element --&gt;
+    &lt;xs:group name="p.content"&gt;
+      &lt;xs:choice&gt;
+        &lt;!-- "clear" p.content so we can then override it again in the next level of redefine. --&gt;
+      &lt;/xs:choice&gt;            
+    &lt;/xs:group&gt;  
+  &lt;/xs:redefine&gt;
+
+  &lt;xs:group name="p-highlight-only.content"&gt;
+    &lt;xs:choice&gt;
+      &lt;xs:sequence maxOccurs="unbounded"&gt;      
+        &lt;xs:group ref="b" minOccurs="0"/&gt;
+        &lt;xs:group ref="i" minOccurs="0"/&gt;
+        &lt;xs:group ref="u" minOccurs="0"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:choice&gt;                
+  &lt;/xs:group&gt;
+&lt;/xs:schema&gt; </pre>
+                                 <p class="p">This schema document redefines <code>&lt;p&gt;</code> as declared in <span class="ph filepath">commonElementMod.xsd</span> to be an empty group. This document also defines a new group containing the new content
+                                    model we want for <code>&lt;p&gt;</code>.
+                                 </p>
+                                 
+                              </li>
+                              
+                              <li class="li">In the new constraint module XSD file, create an <code>&lt;xs:redefine&gt;</code> element
+                                 that points <span class="ph filepath">highlightOnlyPConstraintsInt.xsd</span> and defines
+                                 <span class="q">"p.content"</span> to use the <span class="q">"p-highlight-only.content"</span> content group
+                                 also defined in
+                                 <span class="ph filepath">highlightOnlyPConstraintsInt.xsd</span>:<pre class="pre codeblock">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt; 
+
+  &lt;xs:redefine schemaLocation="<strong class="ph b">highlightOnlyPConstraintsInt.xsd</strong>"&gt;
+    &lt;!-- constrain content of &lt;p&gt; element --&gt;
+    &lt;xs:group name="p.content"&gt;    
+      &lt;xs:choice&gt;
+        <strong class="ph b">&lt;xs:group ref="p-highlight-only.content"/&gt;</strong>
+      &lt;/xs:choice&gt;            
+    &lt;/xs:group&gt;
+  &lt;/xs:redefine&gt;
+
+
+&lt;/xs:schema&gt;</pre>
+                                 </li>
+                              
+                              <li class="li">To the topic document type shell XSD add the statement in bold between the two statements
+                                 shown:<pre class="pre codeblock">  ...
+
+  &lt;xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:topicMod.xsd:1.2"/&gt;
+
+  <strong class="ph b">&lt;xs:include schemaLocation="highlightOnlyTopicConstraints.xsd" /&gt;</strong>
+  
+  &lt;xs:group name="info-types"&gt;
+    &lt;xs:sequence/&gt;    
+  &lt;/xs:group&gt;
+
+  ...</pre>
+                                 <p class="p">This includes the constraint module in the XSD document type shell.</p>
+                                 
+                              </li>
+                              
+                              <li class="li">In the topic document type shell, remove or comment out the include of
+                                 <span class="ph filepath">commonElementMod.xsd</span>, since it is now included by the
+                                 redefine statement in the intermediate XSD
+                                 document:<pre class="pre codeblock">  &lt;!-- =================  MODULE INLCUDE DEFINITION  ==================  --&gt;
+ <strong class="ph b">&lt;!-- &lt;xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:commonElementMod.xsd:1.2"/&gt; --&gt;</strong></pre>
+                                 </li>
+                              
+                              <li class="li">Test your work by validating your test document. It should validate (meaning all the
+                                 schema components are hooked up). Make sure your test document has a paragraph
+                                 with something other than <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, or
+                                 <code>&lt;u&gt;</code> in it (e.g., <code>&lt;keyword&gt;</code>).
+                              </li>
+                              
+                              <li class="li">Update the domains attribute declaration in the document type shell to reflect the
+                                 use of the constraint module:<pre class="pre codeblock">  ...
+
+  &lt;xs:attributeGroup name="domains-att"&gt;
+    &lt;xs:attribute name="domains" type="xs:string" 
+      default="<strong class="ph b">(topic highlightOnlyP-c)</strong> 
+          (topic ui-d) (topic hi-d) (topic sw-d) (topic pr-d) 
+          (topic ut-d) (topic indexing-d) (topic hazard-d) 
+          (topic abbrev-d)"/&gt;
+  &lt;/xs:attributeGroup&gt;
+
+  ...</pre>
+                                 </li>
+                              
+                              <li class="li">Test the constraint by validating your test document. It should be valid and should
+                                 only allow <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, and <code>&lt;u&gt;</code> within <code>&lt;p&gt;</code>. 
+                              </li>
+                              
+                           </ol>
+                           
+                        </div>
+                        
+                        <p class="p">At this point you could package the constraint module and the shell document type
+                           into Toolkit plugins.
+                        </p>
+                        
+                     </div>
+                     
+                     <div xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" class="related-links"></div>
+                  </div>
+                  
+               </section>
+               <div class="clear"></div>
+               
+            </div>
+            <div class="clearfix"></div>
+         </div>
+         <div class="clearfix"></div>
+         <div id="footer-container" class="grid_12">
+            
+            
+         </div>
+      </div>
+   </body>
+</html>

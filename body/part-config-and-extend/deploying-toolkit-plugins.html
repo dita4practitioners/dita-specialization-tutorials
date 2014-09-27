@@ -1,0 +1,539 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>Deploying Toolkit Plugins</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="schema.DC" href="http://purl.org/dc/terms/">
+      <meta name="DC.Type" content="subsection">
+      
+      <meta name="DC.Title" content="Deploying Toolkit Plugins">
+      
+      <meta name="DC.subject" content="Open Toolkit, deploying plugins, plugin, deploying, Ant, deploying plugins with">
+      
+      <meta name="keywords" content="Open Toolkit, deploying plugins, plugin, deploying, Ant, deploying plugins with">
+      
+      <meta name="DC.Relation" scheme="URI" content="config-tutorials.html">
+      
+      <meta name="DC.Relation" scheme="URI" content="packaging-vocabulary-as-plugins.html">
+      
+      <meta name="DC.Relation" scheme="URI" content="../sidebars/public-identifiers.html">
+      
+      <meta name="DC.Format" content="XHTML">
+      
+      <meta name="DC.Identifier" content="topic-id">
+      <script type="text/javascript">var d4p = {"relativePath":"..\/..\/","dev":false,"debug":false,"draft":false,"nextTopicHref":"body\/sidebars\/public-identifiers.html","previousTopicHref":"body\/part-config-and-extend\/packaging-vocabulary-as-plugins.html"}</script>
+      <link rel="stylesheet" type="text/css" media="screen, projection" href="../../themes/dita-d4p-classic/css/style.css">
+      
+      <link rel="stylesheet" type="text/css" media="screen, projection, print" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      <script type="text/javascript">
+      
+        d4p.cssGridPath = d4p.dev ? 'html5-themes/modules/960-Responsive-Grid/css/' : 'themes/dita-d4p-classic/css/';
+        var ADAPT_CONFIG = {
+          // Where is your CSS?
+          path: d4p.relativePath + d4p.cssGridPath,
+
+          // false = Only run once, when page first loads.
+          // true = Change on window resize and page tilt.
+          dynamic: true,
+
+          // Optional callback... myCallback(i, width)
+          callback: doc_resize,
+
+          // First range entry is the minimum.
+          // Last range entry is the maximum.
+          // Separate ranges by "to" keyword.
+          range: [
+             // small (size-0)
+            '0px    to 760px  = mobile.css',
+             // medium (size-1, size-2)
+            '760px  to 980px  = 720.css',
+            '980px  to 1270px = 960.css',
+             // large (size-3, size-5)
+            '1270px to 1600px = 1200.css',
+            '1600px to 1940px = 1560.css',
+             // extra large (size-6)
+            '1940px to 2540px = 1920.css',
+            '2540px           = 2520.css'
+          ]
+        };
+
+        function doc_resize(i, width)
+        {
+          d4p.setBodyClassfunction(i, width);
+        }
+
+
+        
+      </script>
+      <script type="text/javascript" src="../../themes/dita-d4p-classic/js/script.js"></script>
+      </head>
+   <body class="en-us dita-d4p-classic centered navigation-default">
+      <div id="d4h5-main-container" class="container_12" role="application">
+         <ul id="page-links" class="hidden">
+            <li><a id="skip-to-content" href="#d4h5-main-content">Skip to content</a></li>
+            <li><a id="skip-to-localnav" href="#local-navigation">Skip to navigation</a></li>
+            <li><a id="skip-to-footer" href="#footer">Skip to footer</a></li>
+         </ul>
+         <header role="banner" aria-labelledby="publication-title" class="hide-for-small">
+            <div class="grid_8">
+               <h1 id="publication-title">DITA Configuration and Specialization Tutorials</h1>
+            </div>
+            <section class="grid_4 search-box"></section>
+            <secion class="clearfix"></secion>
+         </header>
+         <div id="d4h5-section-container" class="grid_12">
+            <nav class="mobile-nav">
+               <ul>
+                  <li class="toggle-topbar menu-icon no-child "><a href="#local-navigation">Menu</a></li>
+               </ul>
+               <section class="nav-pub-title">DITA Configuration and Specialization Tutorials</section>
+            </nav>
+            <nav id="local-navigation" role="navigation" aria-label="Main navigation" class="grid_4 alpha omega">
+               <div id="nav-content">
+                  <ul>
+                     <li class="toc_link no-child "><a href="../../index.html">Table of Contents</a></li>
+                     <li class=" collapsible  active"><a href="../../standalone-tutorials/config-and-extend-tutorials-standalone.html">DITA Configuration and Specialization Tutorials</a><ul>
+                           <li class=" no-child "><a href="../../standalone-tutorials/about-this-tutorial.html">About These Tutorials</a></li>
+                           <li class=" collapsible  collapsed"><a href="../../body/part-end-to-end/dev-environment-setup.html">Setting Up Your Development Environment</a><ul>
+                                 <li class=" no-child "><a href="../../body/part-tool-configuration-and-extension/oxygen/oxygen-setting-up-editing.html">Setting Up OxygenXML for DITA Editing</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/understanding_specialization.html">Understanding Configuration and Specialization</a><ul>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/vocabulary-management.html">XML Vocabularies and their Management</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/dita-vocabulary-management.html">DITA Vocabulary Management: Modules</a></li>
+                                 <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/doctypes-config-and-specialization.html">DITA Document Types, Configuration, and Specialization</a><ul>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/vocabulary-configuration.html">Configuration</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/specialization-overview.html">Specialization</a></li>
+                                    </ul>
+                                 </li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/cost-of-interchange.html">The Cost of Interchange Enablement and the Overall Value of DITA</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  active"><a href="../../body/part-config-and-extend/config-tutorials.html">Introduction to the Configuration and Extension Tutorials</a><ul>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/general-extension-development-methods.html">General Guidance for Developing New Shells and Modules</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/dtd-or-xsd.html">DTD or XSD?</a></li>
+                                 <li class=" no-child "><a href="../../body/sidebars/saxon-and-schema-aware-parsing.html">Schema-Aware Parsing and Saxon</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/packaging-vocabulary-as-plugins.html">Packaging Document Type Shells and Vocabulary Modules as Toolkit Plugins</a></li>
+                                 <li class=" no-child  active"><a class="selected" href="../../body/part-config-and-extend/deploying-toolkit-plugins.html">Deploying Toolkit Plugins</a></li>
+                                 <li class=" no-child "><a href="../../body/sidebars/public-identifiers.html">Public Identifiers</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/tutorials/document-type-shells/creating-document-type-shells.html">Document Type Shell Tutorial</a><ul>
+                                 <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/tutorials/document-type-shells/creating-a-dtd-shell.html">DTD Topic Type Shell Creation Tutorial</a><ul>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/document-type-shells/dtd-topic-shell-step-01.html">DTD Topic Type Shell Tutorial Step 1: Copy Existing Shell</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/document-type-shells/dtd-topic-shell-step-02.html">DTD Topic Type Shell Tutorial Step 2: Delete Unwanted Domain Modules</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/document-type-shells/dtd-topic-shell-step-03.html">DTD Topic Type Shell Tutorial Step 3: Add Reference to a New Domain</a></li>
+                                    </ul>
+                                 </li>
+                                 <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/tutorials/document-type-shells/creating-an-xsd-shell.html">XSD Topic Type Shell Tutorial</a><ul>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/document-type-shells/xsd-topic-shell-step-01.html">XSD Topic Type Shell Tutorial Step 1: Copy Existing Shell</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/document-type-shells/xsd-topic-shell-step-02.html">XSD Topic Type Shell Tutorial Step 2: Remove References to Unwanted Domain Modules</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/document-type-shells/xsd-topic-shell-step-03.html">XSD Topic Type Shell Tutorial Step 3: Add Reference to a New Domain</a></li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/tutorials/constraint-module/creating-constraint-module.html">Topic Constraint Module Tutorial</a><ul>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/constraint-module/constraint-domain-dtd-step-1.html">Topic Constraint Module Step 1: Create The Constraint Module File</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/constraint-module/constraint-domain-dtd-step-2.html">Topic Constraint Module Step 2: Declare The domains Attribute Text Entity</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/constraint-module/constraint-domain-dtd-step-3.html">Topic Constraint Module Step 3: Define the New Content Models</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/constraint-module/constraint-domain-dtd-step-4.html">Topic Constraint Module Step 4: Integrate the Constraint Module in a Document Type
+                                       Shell</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/constraint-module/constraint-domain-dtd-step-5.html">Topic Constraint Module Step 5: Test the Document Type Shell</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/constraint-module/creating-an-xsd-constraint-module.html">Topic Constraint Module: XSD-Syntax Version</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/tutorials/attribute-domain/domain-att-spec-process.html">Attribute Specialization Tutorial</a><ul>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/attribute-domain/domain-att-spec-process-step-1.html">Attribute Specialization Step 1: Create Domain Module Files</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/attribute-domain/domain-att-spec-process-step-2.html">Attribute Specialization Step 2: Integrate With Document Type Shell</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/attribute-domain/domain-att-spec-process-step-3.html">Attribute Specialization Step 3: Test the Declarations</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/attribute-domain/xsd-attribute-specialization.html">Attribute Specialization: XSD Version</a></li>
+                              </ul>
+                           </li>
+                           <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-overview.html">Element Domain Specialization Process Overview (DTDs)</a></li>
+                           <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-1.html">Element Domain Specialization Step 1: Design The Domain Element Types</a></li>
+                           <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-2.html">Element Domain Specialization Step 2: Declare The Domain Element Types</a><ul>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-2-1.html">Step 2-1. Create New .mod File</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-2-2.html">Step 2-2. Declare Element Type Name Parameter Entities</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-2-3.html">Step 2-3. Declare Elements and Attributes</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-2-4.html">Step 2-4. Declare class Attributes</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-3.html">Element Domain Specialization Step 3: Declare The Module Entities File</a><ul>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-3-1.html">Step 3-1. Create xmlDomain.ent</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-3-2.html">Step 3-2. Declare Type-Specific Integration Entities</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-3-3.html">Step 3-3. Declare Domain Usage Text Entity</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4.html">Element Domain Specialization Step 4: Integrate The Module Into a Document Type Shell</a><ul>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-1.html">Step 4-1. Setup Local Copy of Document Type Shell DTD</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-2.html">Step 4-2. Create a Test Topic</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-3.html">Step 4-3. Add .ent File to Shell</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-4.html">Step 4-4. Update Type-Specific Parameter Entities in Shell DTD</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-5.html">Step 4-5. Update domains attribute with new domain</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-6.html">Step 4-6. Include .mod Declaration Set</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-4-7.html">Step 4-7. Test the integration</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-5.html">Element Domain Specialization Step 5: Extend DITA Open Toolkit XHTML Processor</a><ul>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-5-1.html">Element Domain Specialization Step 5-1: Create Blank Specialization-Specific XSLT
+                                       Transform Plugin</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-5-2.html">Element Domain Specialization Step 5-2: Implement Type-Specific XSLT Templates</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-process-step-5-3.html">Element Domain Specialization Step 5-3: Test The Stylesheet</a></li>
+                              </ul>
+                           </li>
+                           <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/element-domain/domain-spec-xsd.html">Element Domain Specialization: XSD Version</a></li>
+                           <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-tutorial.html">Topic Specialization Tutorial</a><ul>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-spec-process-overview.html">Topic Specialization Process Overview</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-1.html">Topic Specialization Step 1: Design The Topic Element Types</a></li>
+                                 <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2.html">Topic Specialization Step 2: Declare the Topic Module Element Types</a><ul>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-1.html">Step 2-1. Create Test Case Document Instance</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-2.html">Step 2-2. Create New Document Type Shell DTD</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-3.html">Step 2-3. Create New .mod File and Integrate Into Shell</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-4.html">Step 2-4. Declare FAQ Question Topic Type Elements and Attributes</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-5.html">Step 2-5. Declare Element Type Parameter Entities</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-6.html">Step 2-6. Declare FAQ Question class Attributes</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-2-7.html">Step 2.7: Define domains Attribute Contribution Entity (.ent File)</a></li>
+                                    </ul>
+                                 </li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-3.html">Topic Specialization Step 3. Package the Modules as a Toolkit Plugin</a></li>
+                                 <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4.html">Topic Specialization Step 4: Extending the Toolkit To Support the Specialization</a><ul>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-1.html">Topic Specialization Step 4-1: Create Initial Toolkit Plugin Components</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-2.html">Topic Specialization Step 4-2: Create Templates For Specialized Elements</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-3.html">Topic Specialization Step 4-3: Copy Template Contents from Base XSLTs</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-4.html">Topic Specialization Step 4-4: Implement Specialization-Specific XSLT Processing</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-5.html">Topic Specialization Step 4-5: Refine Markup Design for FAQ Question</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-4cont.html">Topic Specialization Step 4-4 (continued): Implement Specialization-Specific XSLT
+                                             Processing</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-step-4-6.html">Topic Specialization Step 4-6: Implement CSS Styles</a></li>
+                                    </ul>
+                                 </li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/topic-specialization/topic-specialization-xsd.html">Topic Specialization: XSD Version</a></li>
+                              </ul>
+                           </li>
+                           <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-tutorial.html">Map Specialization Tutorial</a><ul>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-step-1.html">Map Specialization Step 1: Design the Map Element Types</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-step-2.html">Map Specialization Step 2: Create New Document Type Shell DTD</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-step-3.html">Map Specialization Step 3: Create faq-map Map Type Module</a></li>
+                                 <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-step-4.html">Map Specialization Step 4: Create faq-mapDomain Module</a></li>
+                                 <li class=" collapsible  collapsed"><a href="../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-xsd.html">Map Specialization: XSD Version</a><ul>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-xsd-step-1.html">Map Specialization XSD Step 1: Define faq-map Map Type</a></li>
+                                       <li class=" no-child "><a href="../../body/part-config-and-extend/tutorials/map-specialization/map-specialization-xsd-step-2.html">Map Specialization XSD Step 2: Define faq-mapDomain Map Domain</a></li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class=" no-child "><a href="../../generated-index.html">Index</a></li>
+                  </ul>
+               </div>
+            </nav>
+            <div id="d4h5-main-content" class="grid_8 alpha omega">
+               <section>
+                  <div id="content-toolbar" class="toolbar hide-for-small">
+                     
+                     <div xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" class="familylinks">
+                        
+                        <div class="parentlink"><a href="config-tutorials.html" title="Introduction to the Configuration and Extension Tutorials"><span class="fi fi-arrow-up"></span><span class="screen-reader">Introduction to the Configuration and Extension Tutorials</span></a></div>
+                        
+                        <div class="previouslink"><a href="packaging-vocabulary-as-plugins.html" title="Packaging Document Type Shells and Vocabulary Modules as Toolkit Plugins"><span class="fi fi-arrow-left"></span><span class="screen-reader">Packaging Document Type Shells and Vocabulary Modules as Toolkit Plugins</span></a></div>
+                        
+                        <div class="nextlink"><a href="../sidebars/public-identifiers.html" title="Public Identifiers"><span class="fi fi-arrow-right"></span><span class="screen-reader">Public Identifiers</span></a></div>
+                        
+                     </div>
+                     
+                  </div>
+                  <div class="page subsection  - topic-topic subsection-subsection " id="topic-id">
+                     
+                     <h1 class="title topictitle1">Deploying Toolkit Plugins</h1>
+                     <div class="body">
+                        <p class="p">All of the tutorials that follow ultimately result in components that can be packaged
+                           as Open
+                           Toolkit plugins.
+                        </p>
+                        
+                        <p class="p">A plugin for the Open Toolkit is simply a directory containing the files that make
+                           up the plugin.
+                        </p>
+                        
+                        <p class="p">To use a plugin with a Toolkit instance you <span class="q">"deploy"</span> the plugin by copying the directory
+                           to the <span class="ph filepath">plugins</span> directory and running the integrator.xml Ant script
+                           included with the Toolkit (see <a class="xref" href="packaging-vocabulary-as-plugins.html#topic-id" title="You can simplify deployment and testing of document type shells and vocabulary modules by packaging them as Open Toolkit plugins.">Packaging Document Type Shells and Vocabulary Modules as Toolkit Plugins</a>).
+                        </p>
+                        
+                        <p class="p">This raises the question of how to actually do the copying, especially during development,
+                           where you will be making many changes and continuously updating your plugin as you
+                           develop and
+                           test it.
+                        </p>
+                        
+                        <p class="p">As a general practice, you do not want the source code for your plugin to be managed
+                           in the
+                           directory structure of the Toolkit itself. You want to manage the source in a separate
+                           work
+                           area and then copy it to the Toolkit as you go.
+                        </p>
+                        
+                        <p class="p">One reason to keep your plugin source separate from the Toolkit is that the source
+                           file
+                           organization may not match how the files need to be organized for use in a plugin.
+                           For
+                           example, you may need to support one or more editors that expect a specific organizational
+                           structure that is different from what you would use in a plugin. Thus you may need
+                           to produce
+                           several different packagings of the same document type files for use by different
+                           tools.
+                        </p>
+                        
+                        <p class="p">There are, of course, many ways to deploy plugins: you can copy the files manually,
+                           use a
+                           batch or a shell script, or use Ant.
+                        </p>
+                        
+                        <p class="p">The Open Toolkit is based on Apache Ant, which is a general build process scripting
+                           facility. Ant is used very heavily in Java projects to manage compiling and packaging
+                           Java code, but Ant is general purpose and can be used for lots of things.
+                        </p>
+                        
+                        <p class="p">One thing you can do easily with Ant is copy files from one place to another. Thus
+                           you can
+                           create an Ant script that will copy the source files for your plugins to the appropriate
+                           Toolkit and run the integrator.xml Ant script in one step.
+                        </p>
+                        
+                        <p class="p">The main challenge here is telling the Ant script where the Toolkit is on your local
+                           machine.
+                        </p>
+                        
+                        <p class="p">My practice is to have a file named <span class="ph filepath">build.properties</span> (Windows) or
+                           <span class="ph filepath">.build.properties</span> (Linux or OSX) in my home directory that sets the
+                           value of a property named <span class="q">"dita-ot-dir"</span> to the location of the Toolkit I want to deploy
+                           to. In my project-specific build scripts I then include the
+                           <span class="ph filepath">build.properties</span> file and use the <var class="keyword varname">dita-ot-dir</var>
+                           property in copy tasks that deploy my Toolkit plugins. Note that the script below
+                           defines the
+                           property <span class="q">"dita-ot-dir."</span> This definition of the property will be used <em class="ph i">only</em> if
+                           <var class="keyword varname">dita-ot-dir</var> is not defined in either
+                           <span class="ph filepath">.build.properties</span> or <span class="ph filepath">build.properties</span>. By the
+                           property definition precedence rules in Ant, the first definition of a property wins,
+                           so the
+                           definition in the main Ant script is ignored if <var class="keyword varname">dita-ot-dir</var> is defined in
+                           either of the included properties files. See <a class="xref" href="../part-end-to-end/dev-environment-setup.html#chapter-id" title="There are many ways to set up a productive DITA development environment. This chapter describes a set of tools that works well for me, and which I use in describing the tutorials and how-to sections in this book.">Setting Up Your Development Environment</a> for more
+                           information.
+                        </p>
+                        
+                        <div class="p">Here is a simple Ant build script (named <span class="ph filepath">build.xml</span> by Ant convention)
+                           that will deploy a set of Toolkit plugins where the plugin source files are in a directory
+                           named <span class="ph filepath">toolkit_plugins</span> under the main project
+                           directory:<pre class="pre codeblock">&lt;project name="DITA Tutorials" basedir="." default="deploy-toolkit-plugins"&gt;
+	
+  &lt;property file="build.properties"/&gt;
+  &lt;property file="${user.home}/.build.properties"/&gt;
+  &lt;property file="${user.home}/build.properties"/&gt;
+
+	
+  &lt;property name="dist" location="${basedir}/dist"/&gt;
+  &lt;property name="plugin.dist" location="${dist}/plugins"/&gt;
+  &lt;property name="dita-ot-dir" location="c:\DITA-OT1.5"/&gt;
+  &lt;property name="plugin-src" location="${basedir}/toolkit_plugins"/&gt;
+  &lt;property name="plugin-deploy_target" location="${dita-ot-dir}/plugins"/&gt;
+  &lt;property name="ot-plugins-base-name" value="<strong class="ph b">com.example.plugins</strong>"/&gt;
+
+  &lt;import file="${dita-ot-dir}${file.separator}integrator.xml" optional="yes"/&gt;
+
+
+  &lt;target name="init"&gt;
+  &lt;tstamp/&gt;
+  &lt;/target&gt;
+
+  &lt;tstamp&gt;
+	&lt;format property="package.date" pattern="yyyy-MM-dd"/&gt;
+  &lt;/tstamp&gt;
+
+  &lt;target name="clean"&gt;
+  &lt;/target&gt;
+	
+	
+  &lt;target name="dist-toolkit-plugins" 
+      description="Packages the DITA Open Toolkit plugins for deployment to a working Toolkit instance"
+	  depends="dist-init"
+  &gt;
+    &lt;delete includeemptydirs="true" failonerror="false"&gt;
+      &lt;fileset dir="${plugin.dist}"/&gt;
+    &lt;/delete&gt;
+	&lt;copy todir="${plugin.dist}"&gt;
+		&lt;fileset dir="${plugin-src}"&gt;
+		&lt;/fileset&gt;
+	&lt;/copy&gt;
+  &lt;/target&gt;
+	
+  &lt;target name="deploy-toolkit-plugins" depends="dist-toolkit-plugins"
+     description="Deploy plugins to local DITA Open Toolkit"&gt;
+    &lt;delete failonerror="true" includeemptydirs="true"&gt;
+      &lt;fileset dir="${plugin-deploy_target}" includes="${ot-plugins-base-name}.*/**"/&gt;
+    &lt;/delete&gt;
+    &lt;mkdir dir="${plugin-deploy_target}"/&gt;
+    &lt;copy todir="${plugin-deploy_target}"&gt; 
+      &lt;fileset dir="${plugin.dist}"&gt;
+        &lt;include name="**/*"/&gt;
+      &lt;/fileset&gt;
+    &lt;/copy&gt;
+    &lt;!-- Integrate the deployed plugins: --&gt;
+    &lt;antcall target="integrate"/&gt;
+
+  &lt;/target&gt;
+	
+  &lt;target name="dist-init"&gt;
+    &lt;delete failonerror="false" includeemptydirs="true"&gt;
+      &lt;fileset dir="${dist}" includes="*/**"/&gt;
+    &lt;/delete&gt;
+	&lt;mkdir dir="${dist}"/&gt;
+  &lt;/target&gt;
+
+&lt;/project&gt;</pre>
+                           </div>
+                        
+                        <p class="p">If you're not familiar with Ant this may look a lot more complicated than it really
+                           is.
+                        </p>
+                        
+                        <div class="p">Each <code>&lt;target&gt;</code> element represents a separate callable part of the script. In
+                           this script the main target is named <span class="q">"deploy-toolkit-plugins."</span> It's also set as the
+                           default target so that if you simply run the script without specifying a target it
+                           will run
+                           the deploy-toolkit-plugins target automatically. By default, the Ant command looks
+                           for a file
+                           named <span class="ph filepath">build.xml</span> so from a command line, if you are in the directory
+                           containing the <span class="ph filepath">build.xml</span> file, you can just type <span class="keyword cmdname">ant</span>
+                           and it should work (assuming the <span class="keyword cmdname">ant</span> command is in your
+                           path):<pre class="pre codeblock">c:\workspace\myproject&gt; ant
+Buildfile: build.xml
+
+dist-init:
+
+dist-toolkit-plugins:
+
+...
+
+BUILD SUCCEEDED</pre>
+                           </div>
+                        
+                        <div class="p">You can see what targets are available in the script by using the <span class="keyword parmname">-projecthelp</span> parameter:<pre class="pre codeblock">c:\workspace\myproject&gt; ant -projecthelp
+Buildfile: build.xml
+
+Main targets:
+
+ deploy-toolkit-plugins  Deploy plugins to local DITA Open Toolkit
+ dist-toolkit-plugins    Packages the DITA Open Toolkit plugins for deployment to a working Toolkit instance
+Default target: deploy-toolkit-plugins
+c:\workspace\myproject&gt; </pre>
+                           </div>
+                        
+                        <p class="p">The targets listed are those with <code>@description</code> attributes.
+                        </p>
+                        
+                        <div class="p">This script breaks the deployment into two steps:
+                           <ol class="ol" id="topic-id__ol_3d822fab-2a7f-447c-87ec-2b3ec22786ed">
+                              <li class="li">dist-toolkit-plugins copies all the files to a <span class="q">"distribution"</span> directory
+                              </li>
+                              
+                              <li class="li">deploy-toolkit-plugins then copies the files from the distribution directory to the
+                                 Toolkit <span class="ph filepath">plugins</span> directory. It also runs the <span class="ph filepath">integrator.xml</span> script that is part of the Toolkit itself.
+                              </li>
+                              
+                           </ol>
+                           
+                        </div>
+                        
+                        <p class="p">This two-step process allows you the opportunity to pull files together from different
+                           source locations into a single set of files to be deployed. For example, my normal
+                           practice is to manage all my vocabulary modules and document type shells in a source
+                           directory called <span class="ph filepath">doctypes</span> and all my Toolkit plugins in a directory called <span class="ph filepath">toolkit_plugins</span>. In the <span class="ph filepath">toolkit_plugins</span> directory I have directories for each distinct document type plugin with just the
+                           files that are Toolkit-specific (usually just the <span class="ph filepath">plugin.xml</span> file). I then have my dist-toolkit-plugins Ant target merge the files from the <span class="ph filepath">toolkit_plugins</span> directory with the files from the <span class="ph filepath">doctypes</span> directories to create complete Toolkit plugins.
+                        </p>
+                        
+                        <p class="p">The Ant property <var class="keyword varname">ot-plugins-base-name</var> holds the common directory name
+                           prefix for all of the plugins managed by this Ant script, which makes it easy to delete
+                           existing deployed plugins and otherwise copy only the files you want. You would set
+                           this
+                           property to match whatever you've used for your plugins (I recommend the Java-style
+                           reverse
+                           domain name convention, e.g. <span class="q">"com.example.myproject"</span>).
+                        </p>
+                        
+                        <p class="p">One you get this sort of pattern set up it becomes easy to replicate.</p>
+                        
+                        <p class="p">Once you have the Ant script working you can run it in a couple of different ways.</p>
+                        
+                        <p class="p">An easy way is to start a Toolkit command-line shell using the <span class="ph filepath">startcmd.bat</span> or <span class="ph filepath">startcmd.sh</span> scripts that are part of the full Toolkit installation. These scripts set up a command
+                           line environment with everything set up correctly so you can run the Toolkit Ant scripts.
+                           
+                        </p>
+                        
+                        <div class="p">For example, to run your Ant script to deploy your plugins, you might do something
+                           like this:<pre class="pre codeblock">c:\&gt; cd c:\DITA-OT
+c:\DITA-OT&gt; startcmd
+<em class="ph i">{stuff happens here}</em>
+c:\DITA-OT&gt; cd c:\workspace\myproject
+c:\workspace\myproject&gt; ant
+Buildfile: build.xml
+
+dist-init:
+    [mkdir] Created dir: /workspace/myproject/dist
+
+dist-toolkit-plugins:
+
+ ...
+
+integrate:
+[integrate] Using XERCES.
+
+BUILD SUCCESSFUL
+Total time: 2 seconds</pre>
+                           </div>
+                        
+                        <p class="p">Once you've run <span class="ph filepath">startcmd</span> you can come back to the command window and rerun the deploy script just by hitting
+                           the up arrow and enter.
+                        </p>
+                        
+                        <p class="p">If you use Eclipse as your development environment you can run the Ant script from
+                           within Eclipse once you do a one-time setup of Ant with the Open Toolkit's java libraries.
+                           See <a class="xref" href="../part-end-to-end/dev-environment-setup.html#chapter-id" title="There are many ways to set up a productive DITA development environment. This chapter describes a set of tools that works well for me, and which I use in describing the tutorials and how-to sections in this book.">Setting Up Your Development Environment</a>.
+                        </p>
+                        
+                        <p class="p">You can also set up a standalone batch or shell script that sets up the execution
+                           environment as <span class="ph filepath">startcmd</span> does and then runs your Ant script. That may be the most convenient approach if you
+                           expect other people to run this process with minimal setup.
+                        </p>
+                        
+                        <div class="p">Note also that you can set Ant properties on the command line. So, for example, if
+                           you had
+                           two different Toolkit instances that you wanted to deploy to, you could set the value
+                           of the
+                           <var class="keyword varname">dita-ot-dir</var> Ant property on the command line like
+                           so:<pre class="pre codeblock">ant -Ddita-ot-dir=/Applications/oxygen_12_beta/frameworks/dita/DITA-OT/</pre>
+                           </div>
+                        
+                     </div>
+                     
+                     <div xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" class="related-links"></div>
+                  </div>
+                  
+               </section>
+               <div class="clear"></div>
+               
+            </div>
+            <div class="clearfix"></div>
+         </div>
+         <div class="clearfix"></div>
+         <div id="footer-container" class="grid_12">
+            
+            
+         </div>
+      </div>
+   </body>
+</html>
